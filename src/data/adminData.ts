@@ -29,7 +29,6 @@ export const adminData: SidebarData = {
       title: "Student Management",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
       items: [
         { title: "Admissions", url: "/admin/admissions" },
         { title: "Student Records", url: "/admin/student-records" },

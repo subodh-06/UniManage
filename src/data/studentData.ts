@@ -18,7 +18,6 @@ export const studentData: SidebarData = {
       title: "Academic Info.",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
       items: [
         { title: "Class Schedule", url: "/student/class-schedule" },
         { title: "Attendance tracking", url: "/student/attendance" },

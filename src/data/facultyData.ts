@@ -18,7 +18,6 @@ export const facultyData: SidebarData = {
       title: "Courses",
       url: "#",
       icon: SquareTerminal,
-      isActive: true,
       items: [
         { title: "Assigned Courses", url: "/faculty/courses" },
         { title: "Class Schedule", url: "/faculty/schedule" },
