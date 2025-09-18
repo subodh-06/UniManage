@@ -1,6 +1,6 @@
 "use client"
 
-import AttendanceForm from "@/components/attendanceForm"
+import AttendanceForm from "@/components/student/attendanceForm"
 
 
 export default function RegisteredSubjectPage() {

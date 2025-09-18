@@ -1,6 +1,6 @@
 "use client"
 
-import PaymentHistoryPage from "@/components/paymentHistory"
+import PaymentHistoryPage from "@/components/student/paymentHistory"
 
 export default function RegisteredSubjectPage() {
   return <PaymentHistoryPage />

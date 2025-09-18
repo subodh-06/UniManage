@@ -1,8 +1,10 @@
 "use client"
 
 import * as React from "react"
-import { EllipsisVertical } from "lucide-react"
+import { EllipsisVertical, GalleryVerticalEnd, Contact, FileLock, LogOut } from "lucide-react"
 import { Team } from "@/types/sidebar"
+import { useRouter } from "next/navigation"
+import Cookies from "js-cookie"
 
 import {
   DropdownMenu,
@@ -19,9 +21,17 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar"
 
-export function TeamSwitcher({ teams }: { teams: Team[] }) {
+const teams: Team[] = [
+  { name: "UniManage", logo: GalleryVerticalEnd, plan: "Student Dashboard" },
+  { name: "Profile", logo: Contact },
+  { name: "Change Password", logo: FileLock },
+  { name: "Log out", logo: LogOut },
+]
+
+export function TeamSwitcher() {
   const { isMobile } = useSidebar()
-  const [activeTeam, setActiveTeam] = React.useState<Team>(teams[0])
+  const [activeTeam] = React.useState<Team>(teams[0]) // fixed team
+  const router = useRouter()
 
   if (!activeTeam) return null
 
@@ -54,14 +64,26 @@ export function TeamSwitcher({ teams }: { teams: Team[] }) {
             sideOffset={4}
           >
             <DropdownMenuLabel className="text-muted-foreground text-xs">
-              Switch team
+              Options
             </DropdownMenuLabel>
 
             {teams.slice(1).map((team) => (
               <DropdownMenuItem
                 key={team.name}
-                onClick={() => setActiveTeam(team)}
                 className="gap-2 p-2"
+                onClick={() => {
+                  if (team.name === "Profile") {
+                    router.push("/profile")
+                  } else if (team.name === "Change Password") {
+                    router.push("/change-password")
+                  } else if (team.name === "Log out") {
+                    Cookies.remove("token")
+                    Cookies.remove("role")
+                    localStorage.removeItem("token")
+                    localStorage.removeItem("role")
+                    router.push("/") // logout redirect
+                  }
+                }}
               >
                 <div className="flex size-6 items-center justify-center rounded-md border">
                   <team.logo className="size-3.5 shrink-0" />

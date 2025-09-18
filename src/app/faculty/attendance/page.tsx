@@ -1,6 +1,6 @@
 "use client"
 
-import FacultyAttendance from "@/components/attendance"
+import FacultyAttendance from "@/components/faculty/attendance"
 
 
 export default function AttendancePage() {

@@ -1,6 +1,6 @@
 "use client"
 
-import ExamSchedule from "@/components/examSchedule"
+import ExamSchedule from "@/components/student/examSchedule"
 
 
 export default function RegisteredSubjectPage() {

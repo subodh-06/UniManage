@@ -17,7 +17,7 @@ export function AppSidebar({ data,...props }: React.ComponentProps<typeof Sideba
   return (
     <Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+        <TeamSwitcher  />
       </SidebarHeader>
       <SidebarContent>
         <NavProjects projects={data.projects} />

@@ -1,6 +1,6 @@
 "use client"
 
-import FacultyExamSchedule from "@/components/exam-schedule"
+import FacultyExamSchedule from "@/components/faculty/exam-schedule"
 
 export default function ExamSchedulePage() {
   return <FacultyExamSchedule />

@@ -15,10 +15,13 @@ export function middleware(req: NextRequest) {
   if (pathname.startsWith("/student") && role !== "student") {
     return NextResponse.redirect(new URL("/unauth", req.url))
   }
+  if (pathname.startsWith("/admin") && role !== "admin") {
+    return NextResponse.redirect(new URL("/unauth", req.url))
+  }
 
   return NextResponse.next()
 }
 
 export const config = {
-  matcher: ["/faculty/:path*", "/student/:path*"],
+  matcher: ["/faculty/:path*", "/student/:path*", "/admin/:path*"],
 }
